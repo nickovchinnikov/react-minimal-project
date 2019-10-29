@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 import { ClickCounter } from './ClickCounter';
 import { Gallery } from './Gallery';
 import { GiphySearch } from './GiphySearch';
+import { ClickCounterHooks } from './ClickCounterHooks';
 
 const cats = [
   'https://upload.wikimedia.org/wikipedia/commons/6/66/An_up-close_picture_of_a_curious_male_domestic_shorthair_tabby_cat.jpg',
@@ -13,4 +14,5 @@ const cats = [
 
 // render(<ClickCounter />, document.getElementById('root'));
 // render(<Gallery>{cats}</Gallery>, document.getElementById('root'));
-render(<GiphySearch />, document.getElementById('root'));
+// render(<GiphySearch />, document.getElementById('root'));
+render(<ClickCounterHooks />, document.getElementById('root'));

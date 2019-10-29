@@ -4,15 +4,13 @@ interface IProps { }
 
 interface IState {
   count: number
-  name: string
 }
 
 export class ClickCounter extends Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {
-      count: 0,
-      name: 'Here was Vasa!'
+      count: 0
     };
     this.increment = this.increment.bind(this)
   }

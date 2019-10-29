@@ -13,6 +13,7 @@
     "@babel/core": "^7.6.4",
     "@babel/preset-react": "^7.6.3",
     "@babel/preset-typescript": "^7.6.0",
+    "@types/prop-types": "^15.7.3",
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.3",
     "babel-loader": "^8.0.6",
@@ -23,6 +24,7 @@
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
+    "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
   }

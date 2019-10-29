@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import { Image } from './Image';
+
 interface IProps {
   children: string[]
 }
@@ -16,7 +18,7 @@ export class Gallery extends Component<IProps, IState> {
     };
     this.next = this.next.bind(this)
   }
-
+  
   next() {
     const { idx } = this.state;
     const { children } = this.props
@@ -33,9 +35,7 @@ export class Gallery extends Component<IProps, IState> {
     const { children } = this.props;
     
     return (
-      <div>
-        <img onClick={this.next} height="500" src={children[idx]} />
-      </div>
+      <Image onClick={this.next} src={children[idx]} />
     );
   }
 }

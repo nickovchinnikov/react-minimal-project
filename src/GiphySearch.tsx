@@ -21,6 +21,12 @@ export class GiphySearch extends Component<IProps, IState> {
     this.handleChange = this.handleChange.bind(this)
   }
 
+  shouldComponentUpdate(nextProps: IProps, nextState: IState) {
+    const { searchInput, imgs } = this.state
+
+    return searchInput !== nextState.searchInput || imgs !== nextState.imgs
+  }
+
   componentDidMount() {
     console.log('mounted!')
     this.setState({
@@ -31,7 +37,7 @@ export class GiphySearch extends Component<IProps, IState> {
   async componentDidUpdate(prevProps: IProps, prevState: IState) {
     const { searchInput } = this.state
 
-    if (searchInput !== prevState.searchInput && searchInput.length > 3) {
+    if (searchInput !== prevState.searchInput && searchInput.length > 2) {
         const result = await this.search(searchInput)
         const { data } = result
 
@@ -71,7 +77,7 @@ export class GiphySearch extends Component<IProps, IState> {
         </label>
         <h1>Results: </h1>
         <div>
-          {imgs.map((item: any) => <div>
+          {imgs.map((item: any) => <div key={item.id}>
             <h3>{item.title} ({item.rating})</h3>
             <img
               src={item.images.fixed_height.url}
