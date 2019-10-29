@@ -3,10 +3,10 @@ const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/index.tsx",
   devtool: "source-map",
   resolve: {
-    extensions: [".js", ".jsx", ".json"]
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".json"]
   },
   output: {
     path: path.join(__dirname, "/dist"),
@@ -16,7 +16,13 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        loader: "babel-loader"
+        loader: "babel-loader",
+        exclude: /node_modules/
+      },
+      {
+        test: /\.tsx?$/,
+        loader: "babel-loader",
+        exclude: /node_modules/
       }
     ]
   },
