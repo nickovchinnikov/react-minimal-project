@@ -12,7 +12,7 @@ export class ClickCounter extends Component<IProps, IState> {
     super(props);
     this.state = {
       count: 0,
-      name: 'viktor'
+      name: 'Here was Vasa!'
     };
     this.increment = this.increment.bind(this)
   }
