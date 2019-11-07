@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npx webpack-dev-server --mode development --open --hot",
-    "build": "npx webpack --mode production"
+    "build": "npx webpack --mode production",
+    "test": "npx jest"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +19,7 @@
     "@types/react-dom": "^16.9.3",
     "babel-loader": "^8.0.6",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.9.0",
     "typescript": "^3.6.4",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
