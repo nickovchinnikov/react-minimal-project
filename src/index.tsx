@@ -2,13 +2,13 @@ import React from 'react'
 import { render } from 'react-dom';
 
 // import { ClickCounter } from './ClickCounter';
-import { Gallery } from './Gallery';
-import { GiphySearch } from './GiphySearch';
-import { ClickCounterHooks } from './ClickCounterHooks';
-import { Container } from './Container';
-import { ClickCounter, FancyClickCounter } from './ClickCounterHOC';
-import { SmartUserCard } from './SmartUserCard';
-import { FramedImg, FramedUser } from './Frame';
+import { Gallery } from './patterns/Gallery';
+import { GiphySearch } from './patterns/GiphySearch';
+import { ClickCounterHooks } from './patterns/ClickCounterHooks';
+import { Container } from './patterns/Container';
+import { ClickCounter, FancyClickCounter } from './patterns/ClickCounterHOC';
+import { SmartUserCard } from './patterns/SmartUserCard';
+import { FramedImg, FramedUser } from './patterns/Frame';
 
 const cats = [
   'https://upload.wikimedia.org/wikipedia/commons/6/66/An_up-close_picture_of_a_curious_male_domestic_shorthair_tabby_cat.jpg',
