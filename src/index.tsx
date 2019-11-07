@@ -16,6 +16,10 @@ const cats = [
   'https://i.ytimg.com/vi/pjRs_WT8VzM/maxresdefault.jpg'
 ]
 
+import { CounterApp } from './redux/counter'
+
+CounterApp()
+
 // render(<ClickCounter />, document.getElementById('root'));
 // render(<Gallery>{cats}</Gallery>, document.getElementById('root'));
 // render(<GiphySearch />, document.getElementById('root'));
@@ -27,7 +31,7 @@ const cats = [
 //     <FancyClickCounter />
 //   </div>, document.getElementById('root'));
 
-render(<SmartUserCard name="Pedro" />, document.getElementById('root'));
+// render(<SmartUserCard name="Pedro" />, document.getElementById('root'));
 
 // render(<div><FramedImg /><FramedUser /></div>, document.getElementById('root'));
 
