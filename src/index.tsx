@@ -16,9 +16,13 @@ const cats = [
   'https://i.ytimg.com/vi/pjRs_WT8VzM/maxresdefault.jpg'
 ]
 
-import { CounterApp } from './redux/counter'
+// import { CounterApp } from './redux/counter'
 
-CounterApp()
+// CounterApp()
+
+import { RedditApp } from './redux/reddit/index'
+
+RedditApp()
 
 // render(<ClickCounter />, document.getElementById('root'));
 // render(<Gallery>{cats}</Gallery>, document.getElementById('root'));
