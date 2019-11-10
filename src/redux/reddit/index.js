@@ -18,9 +18,7 @@ const store = createStore(
   applyMiddleware(...middleware)
 )
 
-export const RedditApp = () => render(
+export const RedditApp = () =>
   <Provider store={store}>
     <App />
-  </Provider>,
-  document.getElementById('root')
-)
+  </Provider>

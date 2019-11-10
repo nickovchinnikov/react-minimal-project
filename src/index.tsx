@@ -1,14 +1,18 @@
 import React from 'react'
 import { render } from 'react-dom';
 
-// import { ClickCounter } from './ClickCounter';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 import { Gallery } from './patterns/Gallery';
 import { GiphySearch } from './patterns/GiphySearch';
-import { ClickCounterHooks } from './patterns/ClickCounterHooks';
-import { Container } from './patterns/Container';
-import { ClickCounter, FancyClickCounter } from './patterns/ClickCounterHOC';
-import { SmartUserCard } from './patterns/SmartUserCard';
-import { FramedImg, FramedUser } from './patterns/Frame';
+import { ClickCounter } from './patterns/ClickCounterHOC';
+
+import { RedditApp } from './redux/reddit/index'
 
 const cats = [
   'https://upload.wikimedia.org/wikipedia/commons/6/66/An_up-close_picture_of_a_curious_male_domestic_shorthair_tabby_cat.jpg',
@@ -16,34 +20,46 @@ const cats = [
   'https://i.ytimg.com/vi/pjRs_WT8VzM/maxresdefault.jpg'
 ]
 
-// import { CounterApp } from './redux/counter'
+const App = () => <Router>
+  <div>
+    <nav>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/click-counter">Click-counter</Link>
+        </li>
+        <li>
+          <Link to="/gallery">Gallery</Link>
+        </li>
+        <li>
+          <Link to="/giphy-search">Giphy search</Link>
+        </li>
+        <li>
+          <Link to="/reddit">Reddit</Link>
+        </li>
+      </ul>
+    </nav>
 
-// CounterApp()
+    <Switch>
+      <Route path="/click-counter">
+        <ClickCounter />
+      </Route>
+      <Route path="/reddit">
+        <RedditApp />
+      </Route>
+      <Route path="/gallery">
+        <Gallery>{cats}</Gallery>
+      </Route>
+      <Route path="/giphy-search">
+        <GiphySearch />
+      </Route>
+      <Route path="/">
+        <h1>Home</h1>
+      </Route>
+    </Switch>
+  </div>
+</Router>
 
-import { RedditApp } from './redux/reddit/index'
-
-RedditApp()
-
-// render(<ClickCounter />, document.getElementById('root'));
-// render(<Gallery>{cats}</Gallery>, document.getElementById('root'));
-// render(<GiphySearch />, document.getElementById('root'));
-// render(<ClickCounterHooks />, document.getElementById('root'));
-
-// render(
-//   <div>
-//     <ClickCounter />
-//     <FancyClickCounter />
-//   </div>, document.getElementById('root'));
-
-// render(<SmartUserCard name="Pedro" />, document.getElementById('root'));
-
-// render(<div><FramedImg /><FramedUser /></div>, document.getElementById('root'));
-
-// render(
-//   <Container header={<h1>Header</h1>} onClose={() => console.log('onClose')}>
-//     <div>
-//       <h1>Body!</h1>
-//       <h2>Some text bellow</h2>
-//     </div>
-//   </Container>,
-// document.getElementById('root'));
+render(<App />, document.getElementById('root'));
